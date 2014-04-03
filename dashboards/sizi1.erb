@@ -1,0 +1,16 @@
+<script type='text/javascript'>
+$(function() {
+  // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
+  Dashing.widget_base_dimensions
+  Dashing.numColumns = 1
+});
+</script>
+
+<% content_for :title do %>My super sweet dashboard<% end %>
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="SiZi1" data-view="Ews" style="background-color:#0B0EBA;"></div>
+    </li>
+  </ul>
+</div>
