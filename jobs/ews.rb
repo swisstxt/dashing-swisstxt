@@ -1,11 +1,8 @@
 # :first_in sets how long it takes before the job is first run. In this case, it is run immediately
 require 'viewpoint'
 require 'time'
-
 include Viewpoint::EWS
 
-start_time = Time.now.iso8601
-end_time = (Time.now + 7200).iso8601
 rooms = Hash.new
 rooms["SiZi1"] = Hash.new
 rooms["SiZi2"] = Hash.new
@@ -13,6 +10,10 @@ rooms["SiZi3"] = Hash.new
 rooms["SiZi4"] = Hash.new
 
 SCHEDULER.every '1m', :first_in => '2s' do |job|
+  
+  start_time = Time.now.iso8601
+  end_time = (Time.now + 7200).iso8601
+
   cli = Viewpoint::EWSClient.new settings.config["ews"]["url"], settings.config["ews"]["user"], settings.config["ews"]["pw"], http_opts: {ssl_verify_mode: 0}
   cli.set_time_zone "W. Europe Standard Time"
   rooms.each do |k,v|
