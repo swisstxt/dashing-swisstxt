@@ -23,6 +23,8 @@ module Stxtdashing
       if ssl then
 	http.use_ssl = true
 	req.basic_auth username, password
+      elsif (!username.nil? && !password.nil?) then
+        req.basic_auth username, password
       end
       response = http.request(req)
       return response.body
