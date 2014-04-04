@@ -2,7 +2,7 @@ require 'bundler/setup'
 require 'nagiosharder'
 
 SCHEDULER.every '30s', :first_in => '14s' do
-    nag = NagiosHarder::Site.new("https://#{settings.config["nagios"]["url"]}/icinga/cgi-bin/",settings.config["nagios"]["user"],settings.config["nagios"]["pw"],3,'us')
+    nag = NagiosHarder::Site.new("http://#{settings.config["nagios"]["url"]}/icinga/cgi-bin/",settings.config["nagios"]["user"],settings.config["nagios"]["pw"],3,'us')
     unacked = nag.service_status(:host_status_types => [:all], :service_status_types => [:warning, :critical], :service_props => [:no_scheduled_downtime, :state_unacknowledged, :checks_enabled])
 
     critical_count = 0

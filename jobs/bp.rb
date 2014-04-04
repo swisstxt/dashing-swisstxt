@@ -5,7 +5,7 @@ require 'net/https'
 url_nagiosbp = '/nagiosbp/cgi-bin/nagios-bp.cgi?outformat=json'
 
 SCHEDULER.every '5s', :first_in => '3s' do |job|
-  data = Stxtdashing.fetch_http(settings.config["nagios"]["url"],"/nagiosbp/cgi-bin/nagios-bp.cgi?outformat=json",true,settings.config["nagios"]["user"],settings.config["nagios"]["pw"])
+  data = Stxtdashing.fetch_http(settings.config["nagios"]["url"],"/nagiosbp/cgi-bin/nagios-bp.cgi?outformat=json",settings.config["nagios"]["ssl"],settings.config["nagios"]["user"],settings.config["nagios"]["pw"])
   data = JSON.parse(data)
   response =  Stxtdashing.parse(data)
 

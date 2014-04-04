@@ -4,7 +4,7 @@ require 'json'
 query = "SELECT FullName as label, cntr as value FROM [_STXT_SP_Container].[dbo].[TXP_OpenByOwner] order by value desc"
 
 
-SCHEDULER.every '2m', :first_in => '20s' do
+SCHEDULER.every '10m', :first_in => '20s' do
         res = Stxtdashing.sql_exec(settings.config['sql']['instance'],settings.config['sql']['user'],settings.config['sql']['pw'],query)
         items = []
         res.each do |r|
