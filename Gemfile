@@ -9,5 +9,4 @@ gem 'therubyracer'
 gem 'nagiosharder', :git => 'https://github.com/railsmachine/nagiosharder'
 gem 'retriable'
 gem 'viewpoint', :git => 'https://github.com/mr-deamon/Viewpoint.git'
-gem 'redis-objects'
 
