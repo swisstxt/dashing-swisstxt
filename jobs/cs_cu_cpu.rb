@@ -1,6 +1,5 @@
 # Populate the graph with some random points
 #
-require 'nagiosharder'
 require 'json'
 require 'net/http'
 require 'net/https'
