@@ -5,3 +5,4 @@ nohup.out
 log/
 _history.bak
 Gemfile.lock
+tmp/
