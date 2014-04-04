@@ -3,17 +3,14 @@ class Dashing.BigImage extends Dashing.Widget
     resizeImage = ($img, maxWidth, maxHeight, maximize) ->
         width = $img.width()
         height = $img.height()
- 
-        if maximize or (width > maxWidth) or (height > maxHeight)
-            if width > height
-                ratio = maxWidth / width
-                $img.css("width", maxWidth)
-                $img.css("height", height * ratio)
-            else
-                ratio = maxHeight / height
-                $img.css("width", width * ratio)
-                $img.css("height", maxHeight)
- 
+        delta_x = width-maxWidth
+        delta_y = height-maxHeight
+
+        if delta_x<=delta_y
+          $img.css("height", maxHeight)
+        else
+          $img.css("width", maxWidth)
+         
     getImageSize = ($img, done) ->
         loadedHandler = ->
             $img.off 'load', loadedHandler
@@ -32,7 +29,7 @@ class Dashing.BigImage extends Dashing.Widget
     ready: ->
         container = $(@node).parent()
         @maxWidth = (Dashing.widget_base_dimensions[0] * container.data("sizex")) + Dashing.widget_margins[0] * 2 * (container.data("sizex") - 1)
-        @maxHeight = (Dashing.widget_base_dimensions[1] * container.data("sizey"))
+        @maxHeight = (Dashing.widget_base_dimensions[1] * container.data("sizey")) + Dashing.widget_margins[1] * 2 * (container.data("sizey") - 1)
         draw this
  
     onData: (data) ->
