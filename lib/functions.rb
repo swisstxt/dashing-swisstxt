@@ -17,17 +17,21 @@ module Stxtdashing
 
   def self.fetch_http(server,path,ssl=false,username=nil,password=nil)
     if ssl then port=443 else port=80 end
-    Retriable.retriable do
-      http = Net::HTTP.new(server,port)
-      req = Net::HTTP::Get.new(path)
-      if ssl then
-	http.use_ssl = true
-	req.basic_auth username, password
-      elsif (!username.nil? && !password.nil?) then
-        req.basic_auth username, password
+    begin
+      Retriable.retriable do
+        http = Net::HTTP.new(server,port)
+        req = Net::HTTP::Get.new(path)
+        if ssl then
+          http.use_ssl = true
+          req.basic_auth username, password
+        elsif (!username.nil? && !password.nil?) then
+          req.basic_auth username, password
+        end
+        response = http.request(req)
+        return response.body
       end
-      response = http.request(req)
-      return response.body
+    rescue => e
+      return false
     end
   end
 
