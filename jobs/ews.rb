@@ -20,13 +20,14 @@ SCHEDULER.every '1m', :first_in => '2s' do |job|
     events = cli.get_user_availability(["#{k}@swisstxt.ch"], start_time: start_time, end_time: end_time, requested_view: :detailed).calendar_event_array
     res = events.empty? rescue true
     unless res
-      if (Time.parse(cli.event_start_time(events[0]))>Time.now) then nownext = "(next)" else nownext = "(now)" end
+      if (Time.parse(cli.event_start_time(events[0]))>Time.now) then nownext = "next" else nownext = "now" end
+      if (nownext=="next" then type = "Free" else type = "Busy" end
       t_start = Time.parse(cli.event_start_time(events[0])).strftime '%H:%M'
       t_end = Time.parse(cli.event_end_time(events[0])).strftime '%H:%M'
-      data={"type"=>cli.event_busy_type(events[0]),
+      data={"type"=>type,
       "time"=>"#{t_start} - #{t_end}",
       "event_name"=>cli.event_name(events[0]),
-      "nownext"=>nownext}
+      "nownext"=>"(#{nownext})"}
       send_event(k,data)
     else
       send_event(k,{"type"=>"","time"=>"","event_name"=>"","nownext"=>""})
