@@ -21,7 +21,7 @@ SCHEDULER.every '1m', :first_in => '2s' do |job|
     res = events.empty? rescue true
     unless res
       if (Time.parse(cli.event_start_time(events[0]))>Time.now) then nownext = "next" else nownext = "now" end
-      if (nownext=="next" then type = "Free" else type = "Busy" end
+      if (nownext=="next") then type = "Free" else type = "Busy" end
       t_start = Time.parse(cli.event_start_time(events[0])).strftime '%H:%M'
       t_end = Time.parse(cli.event_end_time(events[0])).strftime '%H:%M'
       data={"type"=>type,
