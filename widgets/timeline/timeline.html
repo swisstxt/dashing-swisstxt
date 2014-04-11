@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="main">
+    <ul class="cbp_tmtimeline">
+      <li data-foreach-event="events">
+        <time class="cbp_tmtime" data-bind-datetime="event.datetime"><!--<span data-bind="event.date"></span> --><span data-bind="event.time"></span></time>
+        <div class="cbp_tmicon icon-calendar"></div>
+        <div class="cbp_tmlabel" data-addclass-pikett="event.pikett">
+          <p data-bind="event.title | truncate 25"></p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<p class="updated-at" data-bind="updatedAtMessage"></p>
+
