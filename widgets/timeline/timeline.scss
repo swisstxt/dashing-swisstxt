@@ -31,7 +31,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
     bottom: 0;
     width: 10px;
     background: #afdcf8;
-    left: 27%;
+    left: 23%;
     margin-left: -16px;
 }
  
@@ -58,7 +58,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
 }
  
 .cbp_tmtimeline > li .cbp_tmtime span:last-child {
-    font-size: 1.2em;
+    font-size: 1em;
     color: #3594cb;
 }
  
@@ -68,7 +68,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
  
 /* Right content */
 .cbp_tmtimeline > li .cbp_tmlabel {
-    margin: 0 0 15px 31%;
+    margin: 0 0 15px 26%;
     background: #3594cb;
     color: #fff;
     padding: 0.15em;
@@ -125,7 +125,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
     border-radius: 50%;
     box-shadow: 0 0 0 8px #afdcf8;
     text-align: center;
-    left: 27%;
+    left: 23%;
     top: 0;
     margin: 0 0 0 -25px;
 }
