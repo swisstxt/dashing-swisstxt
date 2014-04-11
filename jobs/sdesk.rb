@@ -9,7 +9,7 @@ rooms["SiZi2"] = Hash.new
 rooms["SiZi3"] = Hash.new
 rooms["SiZi4"] = Hash.new
 
-SCHEDULER.every '1m', :first_in => '2s' do |job|
+SCHEDULER.every '2h', :first_in => '45s' do |job|
   
   t = Time.now
   start_time = Time.new(t.year,t.month,t.day,0,0,0)
