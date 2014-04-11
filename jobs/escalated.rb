@@ -10,6 +10,6 @@ SCHEDULER.every '1m', :first_in => '4s' do
 	res.each do |v|
 	  val=v["Escalated"]
 	end
-
-  send_event('escalated', { title: "Escalated Tickets", text: val })
+  icon = if (val<1) then "thumbs-up" else "thumbs-down" end
+  send_event('escalated', { title: "Escalated Tickets", text: val ,icon: icon})
 end
