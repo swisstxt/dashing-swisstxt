@@ -67,6 +67,13 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
 }
  
 /* Right content */
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel.pikett {
+  background: red;
+}
+.cbp_tmtimeline > li .cbp_tmlabel.pikett {
+  background: red;
+}
+
 .cbp_tmtimeline > li .cbp_tmlabel {
     margin: 0 0 15px 26%;
     background: #3594cb;
