@@ -15,19 +15,21 @@ class Dashing.Fridaybeer extends Dashing.Widget
       $('.pour') #Pour Me Another Drink, Bartender!
         .delay(2000)
         .animate({
-          height: '360px'
+          height: '320px'
           }, 1500)
         .delay(1600)
         .slideUp(500);
 
       $('#liquid') # I Said Fill 'Er Up!
         .delay(3400)
+        .fadeIn(100)
         .animate({
-          height: '170px'
-        }, 2500);
+          height: '270px'
+        }, 2400);
 
       $('.beer-foam') # Keep that Foam Rollin' Toward the Top! Yahooo!
         .delay(3400)
         .animate({
-          bottom: '200px'
+          opacity: 1,
+          bottom: '290px'
         }, 2500);
