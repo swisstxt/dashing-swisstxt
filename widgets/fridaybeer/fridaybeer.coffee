@@ -1,5 +1,5 @@
 class Dashing.Fridaybeer extends Dashing.Widget
-
+  i = 1
   beerend = ->
     $('.beer').hide()
     $('.pour').height('0px')
@@ -46,7 +46,8 @@ class Dashing.Fridaybeer extends Dashing.Widget
     $('.pour')
       .hide()
       .height('0px')
-    setTimeout beerstart, 80000
+    i = i+1
+    if i < 6 then setTimeout beerstart, 80000 else setTimeout beerend, 60100
 
   ready: ->
     $('.beer').hide()
@@ -57,4 +58,3 @@ class Dashing.Fridaybeer extends Dashing.Widget
       beerend()
     else
       beerstart()
-      setTimeout beerend, 600000
