@@ -1,6 +1,7 @@
 class Dashing.Fridaybeer extends Dashing.Widget
   i = 1
   beerend = ->
+    clearTimeout
     $('.beer').hide()
     $('.pour').height('0px')
     $('#liquid').height('0px')
@@ -9,6 +10,7 @@ class Dashing.Fridaybeer extends Dashing.Widget
       .css("opacity",'0')
 
   beerstart = ->
+    clearTimeout
     $('.beer').show()
     $('.pour')
         .delay(2000)
@@ -33,6 +35,7 @@ class Dashing.Fridaybeer extends Dashing.Widget
     setTimeout beerdrink, 60000
 
   beerdrink = ->
+    clearTimeout
     $('.beer-foam')
       .animate({
         opacity: 0,
