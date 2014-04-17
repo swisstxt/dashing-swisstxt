@@ -32,7 +32,7 @@ class Dashing.Fridaybeer extends Dashing.Widget
           opacity: 1,
           bottom: '290px'
         }, 2500);            #5900
-    setTimeout beerdrink, 60000
+    setTimeout beerdrink, 90000
 
   beerdrink = ->
     clearTimeout
@@ -40,17 +40,19 @@ class Dashing.Fridaybeer extends Dashing.Widget
       .animate({
         opacity: 0,
         bottom: '10px'
-      },60000)
+      },90000)
       .fadeOut(100)
     $('#liquid')
       .animate({
         height: '0px'
-      },60000);
+      },90000);
     $('.pour')
       .hide()
       .height('0px')
     i = i+1
-    if i < 6 then setTimeout beerstart, 80000 else setTimeout beerend, 60100
+    #if i < 6 then setTimeout beerstart, 80000 else setTimeout beerend, 60100
+    setTimeout beerend, 90100
+    
 
   ready: ->
     $('.beer').hide()
