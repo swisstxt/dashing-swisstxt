@@ -23,7 +23,8 @@ SCHEDULER.every '2h', :first_in => '45s' do |job|
       date_start = if(Time.parse(cli.event_start_time(ev))<start_time) then start_time.strftime '%d/%m' else Time.parse(cli.event_start_time(ev)).strftime '%d/%m' end
       time_start = if(Time.parse(cli.event_start_time(ev))<start_time) then start_time.strftime '%H:%M' else Time.parse(cli.event_start_time(ev)).strftime '%H:%M' end
       time_start = if(time_start=="00:00") then "All day" else time_start end
-      result << { date: date_start, time: time_start, datetime: Time.parse(cli.event_start_time(ev)).iso8601(0),title: cli.event_name(ev).tr(?",?') }
+      pikett = if(cli.event_name(ev)[0..5]=="Pikett") then true else false end
+      result << { date: date_start, time: time_start, datetime: Time.parse(cli.event_start_time(ev)).iso8601(0),title: cli.event_name(ev).tr(?",?'),pikett: pikett }
     end
   send_event("timeline",{events: result})
 end
