@@ -1,6 +1,5 @@
 <ul>
   <li data-bind-class="status">
-  <h1 class="title" data-bind="title"></h1>
   <div data-showif="status | equals 'error'"> <!-- error -->
     <h4>Error querying Nagios</h4>
   </div> <!-- /no error -->
@@ -16,7 +15,7 @@
       <h4 data-hideif="warnings | equals 1">warnings</h4>
     </div>
     <div data-showif="criticals | equals 0 | and warnings | equals 0">
-      <br/><br/>
+      <br/><br/><br/><br/>
       <h1>System Monitoring: OK</h1>
     </div>
     <p class="updated-at" data-bind="updatedAtMessage"></p>
