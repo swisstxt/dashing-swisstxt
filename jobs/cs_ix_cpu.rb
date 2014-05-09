@@ -6,8 +6,8 @@ require 'net/https'
 require 'retriable'
 
 svc = Hash.new
-svc["Cloudstack+ZUERICH_IX+CPU"] = ["Cloudstack_ZUERICH_IX"]
-chk = /usage_perc_MAX/
+svc["Capacity_IX_CPU"] = ["_MPC2012_Functionality"]
+chk = /cpu_MAX/
 
 points = []
 

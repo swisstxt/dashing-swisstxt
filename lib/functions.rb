@@ -38,7 +38,7 @@ module Stxtdashing
   def self.sql_exec(instance, user, pw, query)
     client = TinyTds::Client.new(:username => user, :password => pw, :dataserver => instance)
     res = client.execute(query)
-    #client.close
+    sleep(2)
     return res
   end
 
