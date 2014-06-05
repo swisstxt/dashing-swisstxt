@@ -15,6 +15,9 @@ SCHEDULER.every '5s', :first_in => '3s' do |job|
     if response['err']=="OK" then
       text=""
     else
+      sleep(25)
+      updating = Stxtdashing.fetch_http(settings.config["nagios"]["url"],"/icinga/cgi-bin/tac.cgi",settings.config["nagios"]["ssl"],settings.config["nagios"]["user"],settings.config["nagios"]["pw"])
+      exit 0 if updating.include? "OUTDATED"
       if response['count']<4 then
         text="Check #{response['prob']}"
       else
