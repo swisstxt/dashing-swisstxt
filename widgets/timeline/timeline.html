@@ -5,7 +5,7 @@
       <li data-foreach-event="events">
         <time class="cbp_tmtime" data-bind-datetime="event.datetime"><!--<span data-bind="event.date"></span> --><span data-bind="event.time"></span></time>
         <div class="cbp_tmicon icon-calendar"></div>
-        <div class="cbp_tmlabel" data-addclass-pikett="event.pikett">
+        <div data-bind-class="event.color | prepend 'cbp_tmlabel '">
           <p data-bind="event.title | truncate 25"></p>
         </div>
       </li>

@@ -72,11 +72,29 @@ h2{
 }
  
 /* Right content */
-.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel.pikett {
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel.red {
   background: red;
 }
-.cbp_tmtimeline > li .cbp_tmlabel.pikett {
+.cbp_tmtimeline > li .cbp_tmlabel.red {
   background: red;
+}
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel.green {
+  background: green;
+}
+.cbp_tmtimeline > li .cbp_tmlabel.green {
+  background: green;
+}
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel.blue {
+  background: blue;
+}
+.cbp_tmtimeline > li .cbp_tmlabel.blue {
+  background: blue;
+}
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel.orange {
+  background: orange;
+}
+.cbp_tmtimeline > li .cbp_tmlabel.orange {
+  background: orange;
 }
 
 .cbp_tmtimeline > li .cbp_tmlabel {
