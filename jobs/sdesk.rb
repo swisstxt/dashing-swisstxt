@@ -24,13 +24,13 @@ SCHEDULER.every '2h', :first_in => '45s' do |job|
       time_start = if(Time.parse(cli.event_start_time(ev))<start_time) then start_time.strftime '%H:%M' else Time.parse(cli.event_start_time(ev)).strftime '%H:%M' end
       time_start = if(time_start=="00:00") then "All day" else time_start end
       case cli.event_name(ev)
-      when /Pikett.*/
+      when /.*Pikett.*/
         color = "blue"
-      when /FREEZE.*/
+      when /.*FREEZE.*/
         color = "red"
-      when /CHG.*/
+      when /.*(CHG|Unterhalt|upg|Isilon|Firmware).*/
         color = "green"
-      when /.*Ferien/
+      when /.*Ferien.*/
         color = "orange"
       end
       result << { date: date_start, time: time_start, datetime: Time.parse(cli.event_start_time(ev)).iso8601(0),title: cli.event_name(ev).tr(?",?'),color: color}
