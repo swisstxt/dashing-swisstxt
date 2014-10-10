@@ -14,6 +14,7 @@ SCHEDULER.every '5m', :first_in => '5s' do |job|
   response = http.request(request)
   status = JSON.parse(response.body)
 
+  indicator    = status['status']['indicator']
   overall_status    = status['status']
   components_status = status['components'].select{|c|
     # use only the components specified in config (if any)
@@ -33,18 +34,20 @@ SCHEDULER.every '5m', :first_in => '5s' do |job|
   # Count components by status
   components_status_counts = Hash.new 0
   components_status.map{|c| c['status']}.map{|c| components_status_counts[c] += 1}
-
-  if components_status_counts['operational'] <= components_status.size.to_f/2
+ 
+  if indicator == 'critical'
     # if half or less of components are not 'operational' then status is 'red'
     color_status = 'red'
-  elsif (current_issue_count > 0) ||
-        (components_status.size - components_status_counts['operational'] > 0)
+  elsif  indicator == 'major'
     # if there are any current issues, or more than one but less than half
     # of components are not 'operational', status is 'yellow'
-    color_status = 'yellow'
+    color_status = 'orange'
+  elsif  indicator == 'minor'
+                color_status = 'yellow'
   else
     color_status = 'green'
   end
+
 
   send_event(
     "statuspageio",
