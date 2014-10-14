@@ -10,6 +10,8 @@ svc = Hash.new
 svc["SwCoreIX01_po2"] = ["SwCoreIX01.ix"]
 svc["swfeedcu01_po20"] = ["SwFeedCU01"]
 svc["SwCoreIX02_po2"] = ["SwCoreIX02.ix"]
+svc["SwCoreCu01_Eth1%2F30"] = ["SwCoreCu01"]
+svc["SwCoreCu02_Eth1%2F30"] = ["SwCoreCu02"]
 chk = /.*out_bps_MAX/
 
 points = []
