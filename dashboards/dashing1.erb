@@ -1,7 +1,7 @@
 <script type='text/javascript'>
 $(function() {
   // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
-    Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":8,"size_y":6},{"col":1,"row":1,"size_x":2,"size_y":2},{"col":3,"row":1,"size_x":3,"size_y":2},{"col":6,"row":1,"size_x":1,"size_y":1},{"col":7,"row":3,"size_x":1,"size_y":1},{"col":8,"row":3,"size_x":1,"size_y":1},{"col":7,"row":4,"size_x":1,"size_y":1},{"col":8,"row":4,"size_x":1,"size_y":1},{"col":3,"row":5,"size_x":3,"size_y":2},{"col":3,"row":3,"size_x":3,"size_y":2},{"col":7,"row":1,"size_x":2,"size_y":2},{"col":7,"row":5,"size_x":2,"size_y":2},{"col":6,"row":2,"size_x":1,"size_y":2},{"col":1,"row":5,"size_x":2,"size_y":2}]')
+    Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":8,"size_y":6},{"col":1,"row":1,"size_x":2,"size_y":2},{"col":3,"row":1,"size_x":3,"size_y":2},{"col":6,"row":1,"size_x":1,"size_y":1},{"col":7,"row":3,"size_x":1,"size_y":1},{"col":8,"row":3,"size_x":1,"size_y":1},{"col":7,"row":4,"size_x":1,"size_y":1},{"col":8,"row":4,"size_x":1,"size_y":1},{"col":3,"row":5,"size_x":3,"size_y":2},{"col":3,"row":3,"size_x":3,"size_y":2},{"col":7,"row":1,"size_x":2,"size_y":2},{"col":7,"row":5,"size_x":2,"size_y":2},{"col":6,"row":2,"size_x":1,"size_y":2},{"col":1,"row":3,"size_x":2,"size_y":3}]')
   Dashing.widget_base_dimensions = [215, 153]
   Dashing.numColumns = 8
 });
@@ -20,7 +20,7 @@ $(function() {
       <div data-id="bw" data-view="Graph" data-title="Bandwidth" data-moreinfo="Mbit OUT" style="background-color:#6A93A7;"></div>
     </li>
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="vmcount" data-view="Meter" data-height="80" data-width="80" data-min="0" data-max="1000" data-moreinfo="Running VMs"></div>
+      <div data-id="vmcount" data-view="Meter" data-height="80" data-width="80" data-min="0" data-max="1500" data-moreinfo="Running VMs"></div>
     </li>
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="cs_cu_cpu" data-view="Meter" data-height="80" data-width="80" data-min="0" data-max="100" data-moreinfo="CU01 CPU" data-suffix="%"></div>
@@ -52,7 +52,7 @@ $(function() {
     <!--<li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
       <div data-id="instaget" data-view="BigImage"></div>
     </li>-->
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="3">
       <div data-id="statuspageio" data-view="Statuspageio"></div>
     </li>
   </ul>

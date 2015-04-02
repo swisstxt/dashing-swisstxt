@@ -1,6 +1,6 @@
 <script type='text/javascript'>
 $(function() {
-  Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":8,"size_y":6},{"col":1,"row":5,"size_x":2,"size_y":2},{"col":1,"row":1,"size_x":2,"size_y":2},{"col":3,"row":1,"size_x":4,"size_y":2},{"col":7,"row":1,"size_x":2,"size_y":2},{"col":5,"row":5,"size_x":2,"size_y":2},{"col":3,"row":3,"size_x":2,"size_y":4},{"col":7,"row":5,"size_x":2,"size_y":2},{"col":5,"row":3,"size_x":2,"size_y":2}]')
+  Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":8,"size_y":6},{"col":1,"row":3,"size_x":2,"size_y":2},{"col":1,"row":5,"size_x":2,"size_y":2},{"col":1,"row":1,"size_x":2,"size_y":2},{"col":3,"row":1,"size_x":4,"size_y":2},{"col":7,"row":1,"size_x":2,"size_y":2},{"col":5,"row":5,"size_x":2,"size_y":2},{"col":3,"row":3,"size_x":3,"size_y":2},{"col":7,"row":6,"size_x":2,"size_y":1},{"col":7,"row":3,"size_x":2,"size_y":3},{"col":5,"row":3,"size_x":2,"size_y":2}]')
   // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
   Dashing.widget_base_dimensions = [215, 153]
   Dashing.numColumns = 8
@@ -12,6 +12,9 @@ $(function() {
   <ul>
     <li data-row="1" data-col="1" data-sizex="8" data-sizey="6" style="z-index: 99999999">
       <div data-id="beer" data-view="Fridaybeer"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
+      <div data-id="mediahub" data-view="Text"></div>
     </li>
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
       <div data-id="zendesk" data-view="Text"></div>
@@ -31,10 +34,16 @@ $(function() {
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="4">
       <div data-id="timeline" data-view="Timeline"></div>
     </li>
-    <!--<li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
+<li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+     <div data-id="whatever" data-view="Worldclock" data-format="HH:mm:ss"></div>
+    </li>
+    <!--<li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+     <div data-id="whatever" data-view="Worldclock" data-timezone="Europe/Berlin" data-format="HH:mm:ss"></div>
+    </li>-->
+  <!--<li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
       <div data-id="instaget" data-view="BigImage" data-max="false"></div>
     </li>-->
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="3">
       <div data-id="statuspageio" data-view="Statuspageio"></div>
     </li>
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="2">
