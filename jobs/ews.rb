@@ -3,18 +3,24 @@ require 'viewpoint'
 require 'time'
 include Viewpoint::EWS
 
+
+puts OpenSSL::OPENSSL_VERSION
+
 rooms = Hash.new
 rooms["SiZi1"] = Hash.new
 rooms["SiZi2"] = Hash.new
 rooms["SiZi3"] = Hash.new
 rooms["SiZi4"] = Hash.new
 
+
 SCHEDULER.every '1m', :first_in => '2s' do |job|
   
   start_time = Time.now.iso8601
   end_time = (Time.now + 7200).iso8601
 
-  cli = Viewpoint::EWSClient.new settings.config["ews"]["url"], settings.config["ews"]["user"], settings.config["ews"]["pw"], http_opts: {ssl_verify_mode: 0}
+ENV['SSL_CERT_FILE'] = "/etc/pki/tls/certs/ca-bundle.crt"
+
+  cli = Viewpoint::EWSClient.new settings.config["ews"]["url"], settings.config["ews"]["user"], settings.config["ews"]["pw"], http_opts: {ssl_verify_mode: 0, ssl_version: :TLSv1}
   cli.set_time_zone "W. Europe Standard Time"
   rooms.each do |k,v|
     events = cli.get_user_availability(["#{k}@swisstxt.ch"], start_time: start_time, end_time: end_time, requested_view: :detailed).calendar_event_array
