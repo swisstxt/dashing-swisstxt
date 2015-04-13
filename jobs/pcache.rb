@@ -4,7 +4,7 @@ require 'net/https'
 require 'retriable'
 
 svc = Hash.new
-svc["Status"] = ["pcache04.swisstxt.ch","pcache05.swisstxt.ch","pcache11.swisstxt.ch","pcache12.swisstxt.ch","pcache13.swisstxt.ch"]
+svc["Status"] = ["pcache04.swisstxt.ch","pcache05.swisstxt.ch","pcache11.swisstxt.ch","pcache12.swisstxt.ch","pcache13.swisstxt.ch","pcache14.swisstxt.ch","pcache15.swisstxt.ch"]
 chk = "ActiveConn_MAX"
 
 points = []
