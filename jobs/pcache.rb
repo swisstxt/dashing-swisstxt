@@ -4,8 +4,8 @@ require 'net/https'
 require 'retriable'
 
 svc = Hash.new
-svc["Status"] = ["pcache04.swisstxt.ch","pcache05.swisstxt.ch","pcache11.swisstxt.ch","pcache12.swisstxt.ch","pcache13.swisstxt.ch","pcache14.swisstxt.ch","pcache15.swisstxt.ch"]
-chk = "ActiveConn_MAX"
+svc["check_snmp_int"] = ["pcache04.swisstxt.ch","pcache05.swisstxt.ch","pcache11.swisstxt.ch","pcache12.swisstxt.ch","pcache13.swisstxt.ch","pcache14.swisstxt.ch","pcache15.swisstxt.ch"]
+chk = "bond0_out_bps_MAX"
 
 points = []
 
@@ -20,7 +20,7 @@ SCHEDULER.every '5m', :first_in => '10s' do
         sum = sum+data["data"]["row"][5]["v"][chk_num].to_f.to_i
       }
     }
-
+    sum = sum/1024/1024
     points << { x: Time.now.to_i, y: sum}
 
     send_event('pcache_stats', points: points)
