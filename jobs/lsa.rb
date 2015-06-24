@@ -6,8 +6,8 @@ require 'net/https'
 require 'retriable'
 
 svc = Hash.new
-svc["check_icecast_Listeners"] = ["stxts00101","stxts00102","stxts00103","stxts00104","stxts00105","stxts00106","stxts10101","stxts10102","stxts10103","stxts10104","stxts10105","stxts10106"]
-svc["check_wowza_Listeners"] = ["stxts00107","stxts00108","stxts10107","stxts10108"]
+svc["Icecast_Listeners"] = ["stxts00101.swisstxt.ch","stxts00102.swisstxt.ch","stxts00103.swisstxt.ch","stxts00104.swisstxt.ch","stxts00105.swisstxt.ch","stxts00106.swisstxt.ch","stxts10101.swisstxt.ch","stxts10102.swisstxt.ch","stxts10103.swisstxt.ch","stxts10104.swisstxt.ch","stxts10105.swisstxt.ch","stxts10106.swisstxt.ch"]
+svc["Wowza+Listeners"] = ["stxts00107.swisstxt.ch","stxts00108.swisstxt.ch","stxts10107.swisstxt.ch","stxts10108.swisstxt.ch"]
 chk = "total_listeners_MAX"
 
 points = []
