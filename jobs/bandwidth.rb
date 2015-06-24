@@ -7,16 +7,14 @@ require 'retriable'
 require 'yaml'
 
 svc = Hash.new
-svc["SwCoreIX01_po2"] = ["SwCoreIX01.ix"]
-svc["swfeedcu01_po20"] = ["SwFeedCU01"]
-svc["SwCoreIX02_po2"] = ["SwCoreIX02.ix"]
-svc["SwCoreCu01_Eth1%2F30"] = ["SwCoreCu01"]
-svc["SwCoreCu02_Eth1%2F30"] = ["SwCoreCu02"]
+svc["swcoreeq01_po310"] = ["swcoreeq01.stxt.media.int"]
+svc["swcoreeq02_po311"] = ["swcoreeq02.stxt.media.int"]
+svc["swcoreix01_po2"] = ["swcoreix01.stxt.media.int"]
+svc["swcoreix02_po2"] = ["swcoreix02.stxt.media.int"]
 chk = /.*out_bps_MAX/
-
 points = []
 
-SCHEDULER.every '5m', :first_in => '10s' do
+SCHEDULER.every '10s', :first_in => '10s' do
   begin
     sum = 0
       svc.each { |key,value|
